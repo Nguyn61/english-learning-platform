@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans:
+    "Nunito", "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-light: var(--brand-green-light);
+  --color-brand-green-dark: var(--brand-green-dark);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-orange-light: var(--brand-orange-light);
+  --color-tag-purple: var(--tag-purple);
+  --color-tag-blue: var(--tag-blue);
+  --color-tag-orange: var(--tag-orange);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --brand-green: #4caf84;
+  --brand-green-light: #e8f5ee;
+  --brand-green-dark: #3b8f6c;
+  --brand-blue: #2563eb;
+  --brand-blue-light: #eaf1ff;
+  --brand-blue-dark: #1d4ed8;
+  --brand-orange: #ff6d3a;
+  --brand-orange-light: #fff3e6;
+  --tag-purple: #8b5cf6;
+  --tag-blue: #3b82f6;
+  --tag-orange: #fb923c;
+
+  --background: #f5f7f9;
+  --page-background: linear-gradient(180deg, #f8fbff 0%, #f5f7f9 42%, #eef7f4 100%);
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: var(--brand-green);
+  --primary-foreground: #ffffff;
+  --secondary: var(--brand-green-light);
+  --secondary-foreground: #155724;
+  --muted: #f0f2f5;
+  --muted-foreground: #6b7280;
+  --accent: var(--brand-orange-light);
+  --accent-foreground: #c2410c;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #d1d5db;
+  --ring: var(--brand-green);
+  --chart-1: var(--brand-green);
+  --chart-2: var(--brand-orange);
+  --chart-3: var(--tag-blue);
+  --chart-4: var(--tag-purple);
+  --chart-5: var(--tag-orange);
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: var(--brand-green);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--brand-green-light);
+  --sidebar-accent-foreground: #155724;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: var(--brand-green);
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #101827;
+  --page-background: linear-gradient(180deg, #101827 0%, #121f31 48%, #0f1b2b 100%);
+  --foreground: #f8fafc;
+  --card: #162033;
+  --card-foreground: #f8fafc;
+  --popover: #162033;
+  --popover-foreground: #f8fafc;
+  --primary: #68c59c;
+  --primary-foreground: #082015;
+  --secondary: #183527;
+  --secondary-foreground: #d8f6e8;
+  --muted: #1f2937;
+  --muted-foreground: #a7b0bd;
+  --accent: #3a241a;
+  --accent-foreground: #ffd0bf;
+  --destructive: #fb7185;
+  --border: #2b3648;
+  --input: #364153;
+  --ring: #68c59c;
+  --chart-1: #68c59c;
+  --chart-2: #ff8b61;
+  --chart-3: #60a5fa;
+  --chart-4: #a78bfa;
+  --chart-5: #fdba74;
+  --sidebar: #162033;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #68c59c;
+  --sidebar-primary-foreground: #082015;
+  --sidebar-accent: #183527;
+  --sidebar-accent-foreground: #d8f6e8;
+  --sidebar-border: #2b3648;
+  --sidebar-ring: #68c59c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-width: 320px;
+    background-image: var(--page-background);
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--brand-green) 24%, transparent);
+  }
+
+  .skip-link {
+    @apply fixed left-3 top-3 z-50 -translate-y-16 rounded-lg bg-foreground px-4 py-3 text-sm font-bold text-background shadow-lg transition-transform focus:translate-y-0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
